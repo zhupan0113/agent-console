@@ -4,6 +4,28 @@
 
 日常同时使用 Codex、Trae、Claude Code 时，token 消耗、积分和费用分散在各自的本地日志里，Skill 与 MCP 配置也散落在不同目录。本项目把这些数据在本机采集、归一化入库，用一个页面统一查看。
 
+## 界面预览
+
+**总览**：今日 / 本月 / 累计用量、平台卡片与近 30 天趋势
+
+![总览](docs/screenshots/overview.png)
+
+**模型开销**：按模型、项目聚合，支持时间与平台筛选
+
+![模型开销](docs/screenshots/usage.png)
+
+**Skills**：跨平台 Skill 清单，点击查看全文
+
+![Skills](docs/screenshots/skills.png)
+
+**MCP**：已安装的 MCP Server 与启停状态
+
+![MCP](docs/screenshots/mcp.png)
+
+**扫描与导入**：手动触发采集，保留每次执行记录与耗时
+
+![扫描与导入](docs/screenshots/scan.png)
+
 ## 功能
 
 ### 用量与成本
