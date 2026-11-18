@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Console · 本地智能体控制台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+    <div class="brand">
+        <div class="brand-mark">AC</div>
+        <div>
+            <div class="brand-name">Agent Console</div>
+            <div class="brand-sub">本地智能体控制台</div>
+        </div>
+    </div>
+    <nav id="nav">
+        <button class="nav-item active" data-view="overview"><span class="ico">◎</span>总览</button>
+        <button class="nav-item" data-view="agents"><span class="ico">◆</span>Agents</button>
+        <button class="nav-item" data-view="usage"><span class="ico">▤</span>模型开销</button>
+        <button class="nav-item" data-view="skills"><span class="ico">✦</span>Skills</button>
+        <button class="nav-item" data-view="mcp"><span class="ico">⬡</span>MCP</button>
+        <button class="nav-item" data-view="scan"><span class="ico">↻</span>扫描与导入</button>
+        <button class="nav-item" data-view="settings"><span class="ico">⚙</span>设置</button>
+    </nav>
+    <div class="side-foot">
+        只读采集 · 数据不出本机
+        <div class="ver">v1.0.0</div>
+    </div>
+</aside>
+
+<main class="main">
+    <header class="topbar">
+        <div>
+            <h1 id="page-title">总览</h1>
+            <div class="sub" id="page-sub">本地 Codex / Trae / Claude 资产与成本</div>
+        </div>
+        <div class="top-actions">
+            <span class="scan-state" id="scan-state">就绪</span>
+            <button class="btn primary" id="btn-scan">立即扫描</button>
+        </div>
+    </header>
+    <section class="view" id="view"></section>
+</main>
+
+<div class="modal hidden" id="modal">
+    <div class="modal-box">
+        <button class="modal-close" id="modal-close">×</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
+<div class="toast hidden" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

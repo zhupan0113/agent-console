@@ -1,0 +1,44 @@
+server:
+  port: 8848
+  address: 127.0.0.1
+
+spring:
+  application:
+    name: agent-console
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:agent_console}?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:}
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      encoding: UTF-8
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+
+app:
+  scan:
+    enabled: true
+    interval-ms: 120000
+  paths:
+    codex-home: ${CODEX_HOME:${user.home}/.codex}
+    trae-home: ${TRAE_HOME:${user.home}/AppData/Roaming/Trae CN}
+    trae-cn-home: ${TRAE_CN_HOME:${user.home}/.trae-cn}
+    claude-home: ${CLAUDE_HOME:${user.home}/.claude}
+    trae-usage-xlsx: ${TRAE_USAGE_XLSX:${user.home}/Desktop/Trae积分用量.xlsx}
+
+logging:
+  level:
+    com.lenovo.agentconsole: INFO
